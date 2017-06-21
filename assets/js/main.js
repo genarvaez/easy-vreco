@@ -27,7 +27,7 @@ function initMap(){
 		position: {lat: latitud, lng: longitud},
 		animation: google.maps.Animation.DROP, 
 		map: map,
-		icon: '../img/bici.svg'
+		icon: 'assets/img/bici.svg'
        
 	});
 
