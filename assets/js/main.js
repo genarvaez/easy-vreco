@@ -5,7 +5,7 @@ function initMap(){
 		zoom:7,
 		center: {lat: -9.1191427, lng: -77.0349046},
 		mapTypeControl: false,
-		zoomControl: false,
+		zoomControl: true,
 		streetViewControl: false,
 	});
 	
@@ -27,11 +27,9 @@ function initMap(){
 		position: {lat: latitud, lng: longitud},
 		animation: google.maps.Animation.DROP, 
 		map: map,
-		title: 'Hello World!',
-        icon: 'bici.svg',
+		icon: '../img/bici.svg'
        
 	});
-
 
 	map.setZoom(17);
 	map.setCenter({lat: latitud, lng:longitud})
@@ -59,19 +57,10 @@ function initMap(){
         }, function(response, status) {
           if (status === 'OK') {
             directionsDisplay.setDirections(response);
-            var pos = (origin, destination)
-         marker = new google.maps.Marker({
-            position: pos,
-            map: map,
-            title:"Esto es un marcador",
-            animation: google.maps.Animation.DROP
-        }); 
-	  marker.setIcon('bici.svg')
           } else {
             window.alert('Directions request failed due to ' + status);
           }
         });
-        
       }
 
 	 directionsDisplay.setMap(map);
@@ -81,7 +70,5 @@ function initMap(){
 	 };
 
 	 document.getElementById("route").addEventListener("click", trazar);
-
-	
 
 }
